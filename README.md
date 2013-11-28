@@ -1,9 +1,9 @@
-Jinjer
-------
+#Jinjer
+
 
 Jinjer is a command-line tool to render Jinja 2 templates easily.
 
-#Usage
+##Usage
 
 jinjer [options] TEMPLATE-FILE
 
@@ -15,9 +15,11 @@ Parameters to the template can be passed in two ways:
 
 - in the command line, as pairs of KEY VALUE:
 
+
     jinjer template.tpl x 1 y 2
 
 - in a separate yaml file, specified with -p PARAMETER-FILE:
+
 
     jinjer template.tpl -p parameters.yml
 
@@ -26,7 +28,7 @@ specified with -o OUTPUT-FILE:
 
     jinjer template.tpl -o output.txt
 
-#License
+##License
 
 Copyright(c) 2013 André Roque Matheus. Jinjer is MIT licensed, see LICENSE.txt
 for license rights and limitations.
