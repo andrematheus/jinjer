@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-templater
+jinjer
 
 command-line wrapper for Jinja2
 
 Usage:
-   templater [options] TEMPLATE-FILE [(PARAMETER VALUE)] ...
+   jinjer [options] TEMPLATE-FILE [(PARAMETER VALUE)] ...
 
 Options:
    -o OUTPUT-FILE       Output file, writes to stdout if not specified
@@ -27,15 +27,24 @@ def main():
         import yaml
 
         with open(args['-p']) as f:
-            d = yaml.load(f.read())
-            d.extend(parameters)
-            parameters = d
-    output = render(template_file, template_dir, parameters)
-    if output_file:
-        with open(output_file, 'w') as f:
-            f.write(output)
+            docs = list(yaml.load_all(f))
     else:
-        print(output)
+        docs = [{}]
+    i = 0
+    of = output_file
+    for d in docs:
+        i += 1
+        d.update(parameters)
+        output = render(template_file, template_dir, d)
+        if output_file:
+            of = output_file.format(**d)
+            if of == output_file:
+                of = output_file + str(i)
+        if of:
+            with open(of, 'w') as f:
+                f.write(output)
+        else:
+            print(output)
     return True
 
 

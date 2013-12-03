@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jinjer',
-    version='0.2',
+    version='0.3',
     packages=['jinjer'],
     package_dir={'': 'src'},
     url='https://github.com/andrematheus/jinjer',
