@@ -1,9 +1,9 @@
-#Jinjer
+# Jinjer
 
 
 Jinjer is a command-line tool to render Jinja 2 templates easily.
 
-##Usage
+## Usage
 
 jinjer [options] TEMPLATE-FILE
 
@@ -28,7 +28,7 @@ specified with -o OUTPUT-FILE:
 
     jinjer template.tpl -o output.txt
 
-##License
+## License
 
 Copyright(c) 2013 André Roque Matheus. Jinjer is MIT licensed, see LICENSE.txt
 for license rights and limitations.
